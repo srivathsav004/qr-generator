@@ -59,7 +59,7 @@ export function QRDisplay({ data }: QRDisplayProps) {
         <CardContent className="flex flex-col items-center space-y-4">
           <div
             ref={qrRef}
-            className="rounded-lg border-4 border-slate-100 bg-white p-4"
+            className="rounded-lg border-4 border-border bg-card p-4"
           >
             <QRCodeSVG value={jsonString} size={400} level="M" />
           </div>
@@ -91,11 +91,11 @@ export function QRDisplay({ data }: QRDisplayProps) {
             </Button>
           </div>
 
-          <div className="w-full text-center text-sm text-slate-500">
+          <div className="w-full text-center text-sm text-muted-foreground">
             <p>Data size: {dataSize} bytes</p>
             {dataSize > 2000 && (
-              <Alert className="mt-2 border-amber-200 bg-amber-50">
-                <AlertDescription className="text-amber-800">
+              <Alert className="mt-2">
+                <AlertDescription>
                   Warning: QR code contains a large amount of data. Some scanners
                   may have difficulty reading it.
                 </AlertDescription>
@@ -112,28 +112,28 @@ export function QRDisplay({ data }: QRDisplayProps) {
         <CardContent className="space-y-4">
           <div className="space-y-3">
             <div>
-              <h3 className="mb-2 font-semibold text-slate-900">Product Information</h3>
+              <h3 className="mb-2 font-semibold text-foreground">Product Information</h3>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-slate-600">Product Name:</span>
+                  <span className="text-muted-foreground">Product Name:</span>
                   <span className="font-medium">{data.productName}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-600">SKU:</span>
+                  <span className="text-muted-foreground">SKU:</span>
                   <span className="font-medium">{data.sku}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-600">Brand:</span>
+                  <span className="text-muted-foreground">Brand:</span>
                   <span className="font-medium">{data.brand}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-600">Category:</span>
+                  <span className="text-muted-foreground">Category:</span>
                   <Badge variant="secondary">{data.category}</Badge>
                 </div>
                 {data.description && (
                   <div>
-                    <span className="text-slate-600">Description:</span>
-                    <p className="mt-1 text-slate-900">{data.description}</p>
+                    <span className="text-muted-foreground">Description:</span>
+                    <p className="mt-1 text-foreground">{data.description}</p>
                   </div>
                 )}
               </div>
@@ -143,11 +143,11 @@ export function QRDisplay({ data }: QRDisplayProps) {
               <>
                 <Separator />
                 <div>
-                  <h3 className="mb-2 font-semibold text-slate-900">Supply Chain</h3>
+                  <h3 className="mb-2 font-semibold text-foreground">Supply Chain</h3>
                   <div className="space-y-2 text-sm">
                     {data.qualityCheckStatus && (
                       <div className="flex justify-between">
-                        <span className="text-slate-600">Quality Status:</span>
+                        <span className="text-muted-foreground">Quality Status:</span>
                         <Badge
                           variant={
                             data.qualityCheckStatus === 'Pass'
@@ -163,13 +163,13 @@ export function QRDisplay({ data }: QRDisplayProps) {
                     )}
                     {data.warehouseAction && (
                       <div className="flex justify-between">
-                        <span className="text-slate-600">Warehouse Action:</span>
+                        <span className="text-muted-foreground">Warehouse Action:</span>
                         <Badge variant="outline">{data.warehouseAction}</Badge>
                       </div>
                     )}
                     {data.retailerName && (
                       <div className="flex justify-between">
-                        <span className="text-slate-600">Retailer:</span>
+                        <span className="text-muted-foreground">Retailer:</span>
                         <span className="font-medium">{data.retailerName}</span>
                       </div>
                     )}
@@ -182,17 +182,17 @@ export function QRDisplay({ data }: QRDisplayProps) {
               <>
                 <Separator />
                 <div>
-                  <h3 className="mb-2 font-semibold text-slate-900">Additional Details</h3>
+                  <h3 className="mb-2 font-semibold text-foreground">Additional Details</h3>
                   <div className="space-y-2 text-sm">
                     {data.warrantyMonths && (
                       <div className="flex justify-between">
-                        <span className="text-slate-600">Warranty:</span>
+                        <span className="text-muted-foreground">Warranty:</span>
                         <span className="font-medium">{data.warrantyMonths} months</span>
                       </div>
                     )}
                     {data.certificateNumber && (
                       <div className="flex justify-between">
-                        <span className="text-slate-600">Certificate:</span>
+                        <span className="text-muted-foreground">Certificate:</span>
                         <span className="font-medium">{data.certificateNumber}</span>
                       </div>
                     )}
@@ -204,7 +204,7 @@ export function QRDisplay({ data }: QRDisplayProps) {
             {data.generatedAt && (
               <>
                 <Separator />
-                <div className="text-center text-xs text-slate-500">
+                <div className="text-center text-xs text-muted-foreground">
                   Generated on {new Date(data.generatedAt).toLocaleString()}
                 </div>
               </>
