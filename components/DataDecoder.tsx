@@ -69,11 +69,11 @@ export function DataDecoder() {
       {decodedData && (
         <div className="space-y-6">
           <Card>
-            <CardHeader className="bg-slate-50">
+            <CardHeader className="bg-muted">
               <div className="flex items-start justify-between">
                 <div>
                   <CardTitle className="text-2xl">{decodedData.productName}</CardTitle>
-                  <p className="mt-1 text-sm text-slate-600">SKU: {decodedData.sku}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">SKU: {decodedData.sku}</p>
                 </div>
                 <Badge className="bg-emerald-600">{decodedData.category}</Badge>
               </div>
@@ -81,39 +81,39 @@ export function DataDecoder() {
             <CardContent className="pt-6">
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="flex items-start gap-3">
-                  <Package2 className="mt-1 h-5 w-5 text-slate-400" />
+                  <Package2 className="mt-1 h-5 w-5 text-muted-foreground" />
                   <div>
-                    <p className="text-sm font-medium text-slate-900">Brand</p>
-                    <p className="text-slate-600">{decodedData.brand}</p>
+                    <p className="text-sm font-medium text-foreground">Brand</p>
+                    <p className="text-muted-foreground">{decodedData.brand}</p>
                   </div>
                 </div>
 
                 {decodedData.manufacturingDate && (
                   <div className="flex items-start gap-3">
-                    <Calendar className="mt-1 h-5 w-5 text-slate-400" />
+                    <Calendar className="mt-1 h-5 w-5 text-muted-foreground" />
                     <div>
-                      <p className="text-sm font-medium text-slate-900">Manufacturing Date</p>
-                      <p className="text-slate-600">{formatDate(decodedData.manufacturingDate)}</p>
+                      <p className="text-sm font-medium text-foreground">Manufacturing Date</p>
+                      <p className="text-muted-foreground">{formatDate(decodedData.manufacturingDate)}</p>
                     </div>
                   </div>
                 )}
 
                 {decodedData.warrantyMonths && (
                   <div className="flex items-start gap-3">
-                    <Shield className="mt-1 h-5 w-5 text-slate-400" />
+                    <Shield className="mt-1 h-5 w-5 text-muted-foreground" />
                     <div>
-                      <p className="text-sm font-medium text-slate-900">Warranty</p>
-                      <p className="text-slate-600">{decodedData.warrantyMonths} months</p>
+                      <p className="text-sm font-medium text-foreground">Warranty</p>
+                      <p className="text-muted-foreground">{decodedData.warrantyMonths} months</p>
                     </div>
                   </div>
                 )}
 
                 {decodedData.certificateNumber && (
                   <div className="flex items-start gap-3">
-                    <Shield className="mt-1 h-5 w-5 text-slate-400" />
+                    <Shield className="mt-1 h-5 w-5 text-muted-foreground" />
                     <div>
-                      <p className="text-sm font-medium text-slate-900">Certificate Number</p>
-                      <p className="text-slate-600">{decodedData.certificateNumber}</p>
+                      <p className="text-sm font-medium text-foreground">Certificate Number</p>
+                      <p className="text-muted-foreground">{decodedData.certificateNumber}</p>
                     </div>
                   </div>
                 )}
@@ -123,8 +123,8 @@ export function DataDecoder() {
                 <>
                   <Separator className="my-6" />
                   <div>
-                    <h3 className="mb-2 font-semibold text-slate-900">Description</h3>
-                    <p className="text-slate-600">{decodedData.description}</p>
+                    <h3 className="mb-2 font-semibold text-foreground">Description</h3>
+                    <p className="text-muted-foreground">{decodedData.description}</p>
                   </div>
                 </>
               )}
@@ -162,17 +162,17 @@ export function DataDecoder() {
                         <div className="h-3 w-3 rounded-full bg-emerald-600" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-slate-900">Manufacturing & Quality</h4>
+                        <h4 className="font-semibold text-foreground">Manufacturing & Quality</h4>
                         <div className="mt-2 space-y-1 text-sm">
                           {decodedData.manufacturingBatch && (
-                            <p className="text-slate-600">Batch: {decodedData.manufacturingBatch}</p>
+                            <p className="text-muted-foreground">Batch: {decodedData.manufacturingBatch}</p>
                           )}
                           {decodedData.rawMaterialSource && (
-                            <p className="text-slate-600">Material Source: {decodedData.rawMaterialSource}</p>
+                            <p className="text-muted-foreground">Material Source: {decodedData.rawMaterialSource}</p>
                           )}
                           {decodedData.qualityCheckStatus && (
                             <div className="flex items-center gap-2">
-                              <span className="text-slate-600">Quality Check:</span>
+                              <span className="text-muted-foreground">Quality Check:</span>
                               <Badge
                                 variant={
                                   decodedData.qualityCheckStatus === 'Pass'
@@ -187,7 +187,7 @@ export function DataDecoder() {
                             </div>
                           )}
                           {decodedData.qualityInspector && (
-                            <p className="text-slate-600">Inspector: {decodedData.qualityInspector}</p>
+                            <p className="text-muted-foreground">Inspector: {decodedData.qualityInspector}</p>
                           )}
                         </div>
                       </div>
@@ -200,16 +200,16 @@ export function DataDecoder() {
                         <Package2 className="h-3 w-3 text-emerald-600" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-slate-900">Packaging</h4>
+                        <h4 className="font-semibold text-foreground">Packaging</h4>
                         <div className="mt-2 space-y-1 text-sm">
                           {decodedData.packagingDate && (
-                            <p className="text-slate-600">Date: {formatDate(decodedData.packagingDate)}</p>
+                            <p className="text-muted-foreground">Date: {formatDate(decodedData.packagingDate)}</p>
                           )}
                           {decodedData.packagingLocation && (
-                            <p className="text-slate-600">Location: {decodedData.packagingLocation}</p>
+                            <p className="text-muted-foreground">Location: {decodedData.packagingLocation}</p>
                           )}
                           {decodedData.serializationNumber && (
-                            <p className="text-slate-600">Serial: {decodedData.serializationNumber}</p>
+                            <p className="text-muted-foreground">Serial: {decodedData.serializationNumber}</p>
                           )}
                         </div>
                       </div>
@@ -222,16 +222,16 @@ export function DataDecoder() {
                         <Truck className="h-3 w-3 text-emerald-600" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-slate-900">Transportation</h4>
+                        <h4 className="font-semibold text-foreground">Transportation</h4>
                         <div className="mt-2 space-y-1 text-sm">
                           {decodedData.transportFrom && (
-                            <p className="text-slate-600">From: {decodedData.transportFrom}</p>
+                            <p className="text-muted-foreground">From: {decodedData.transportFrom}</p>
                           )}
                           {decodedData.transportTo && (
-                            <p className="text-slate-600">To: {decodedData.transportTo}</p>
+                            <p className="text-muted-foreground">To: {decodedData.transportTo}</p>
                           )}
                           {decodedData.transportCarrier && (
-                            <p className="text-slate-600">Carrier: {decodedData.transportCarrier}</p>
+                            <p className="text-muted-foreground">Carrier: {decodedData.transportCarrier}</p>
                           )}
                         </div>
                       </div>
@@ -244,14 +244,14 @@ export function DataDecoder() {
                         <Warehouse className="h-3 w-3 text-emerald-600" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-slate-900">Warehouse</h4>
+                        <h4 className="font-semibold text-foreground">Warehouse</h4>
                         <div className="mt-2 space-y-1 text-sm">
                           {decodedData.warehouseLocation && (
-                            <p className="text-slate-600">Location: {decodedData.warehouseLocation}</p>
+                            <p className="text-muted-foreground">Location: {decodedData.warehouseLocation}</p>
                           )}
                           {decodedData.warehouseAction && (
                             <div className="flex items-center gap-2">
-                              <span className="text-slate-600">Action:</span>
+                              <span className="text-muted-foreground">Action:</span>
                               <Badge variant="outline">{decodedData.warehouseAction}</Badge>
                             </div>
                           )}
@@ -266,19 +266,19 @@ export function DataDecoder() {
                         <Store className="h-3 w-3 text-emerald-600" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-slate-900">Retail</h4>
+                        <h4 className="font-semibold text-foreground">Retail</h4>
                         <div className="mt-2 space-y-1 text-sm">
                           {decodedData.retailerName && (
-                            <p className="text-slate-600">Retailer: {decodedData.retailerName}</p>
+                            <p className="text-muted-foreground">Retailer: {decodedData.retailerName}</p>
                           )}
                           {decodedData.retailerLocation && (
-                            <p className="text-slate-600">Location: {decodedData.retailerLocation}</p>
+                            <p className="text-muted-foreground">Location: {decodedData.retailerLocation}</p>
                           )}
                           {decodedData.customerSaleDate && (
-                            <p className="text-slate-600">Sale Date: {formatDate(decodedData.customerSaleDate)}</p>
+                            <p className="text-muted-foreground">Sale Date: {formatDate(decodedData.customerSaleDate)}</p>
                           )}
                           {decodedData.salePrice && (
-                            <p className="text-slate-600">Price: {decodedData.salePrice}</p>
+                            <p className="text-muted-foreground">Price: {decodedData.salePrice}</p>
                           )}
                         </div>
                       </div>
@@ -295,13 +295,13 @@ export function DataDecoder() {
                 <CardTitle>Additional Notes</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-600">{decodedData.notes}</p>
+                <p className="text-muted-foreground">{decodedData.notes}</p>
               </CardContent>
             </Card>
           )}
 
           {decodedData.generatedAt && (
-            <p className="text-center text-sm text-slate-500">
+            <p className="text-center text-sm text-muted-foreground">
               QR Code generated on {new Date(decodedData.generatedAt).toLocaleString()}
             </p>
           )}
