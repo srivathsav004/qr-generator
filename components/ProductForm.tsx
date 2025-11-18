@@ -109,7 +109,7 @@ export function ProductForm({ onSubmit, onReset, hasGeneratedQR }: ProductFormPr
       <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
         {/* BASIC INFO */}
         <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-slate-900">Basic Information</h2>
+          <h2 className="text-lg font-semibold text-foreground">Basic Information</h2>
 
           {/* PRODUCT NAME */}
           <FormField
