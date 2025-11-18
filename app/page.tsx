@@ -20,8 +20,8 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <header className="border-b border-slate-200 bg-white">
+    <div className="min-h-screen bg-background">
+      <header className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -29,8 +29,8 @@ export default function Home() {
                 <QrCode className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-slate-900">Luxury QR Generator</h1>
-                <p className="text-sm text-slate-600">Track and authenticate luxury goods</p>
+                <h1 className="text-2xl font-bold text-foreground">Luxury QR Generator</h1>
+                <p className="text-sm text-muted-foreground">Track and authenticate luxury goods</p>
               </div>
             </div>
             <Link href="/decode">
@@ -47,8 +47,8 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-6">
             <div>
-              <h2 className="text-xl font-semibold text-slate-900">Product Information</h2>
-              <p className="mt-1 text-sm text-slate-600">
+              <h2 className="text-xl font-semibold text-foreground">Product Information</h2>
+              <p className="mt-1 text-sm text-muted-foreground">
                 Fill in the details below to generate a QR code with embedded product data.
               </p>
             </div>
@@ -63,11 +63,11 @@ export default function Home() {
             {productData ? (
               <QRDisplay data={productData} />
             ) : (
-              <div className="flex min-h-[400px] items-center justify-center rounded-lg border-2 border-dashed border-slate-200 bg-slate-50">
+              <div className="flex min-h-[400px] items-center justify-center rounded-lg border-2 border-dashed border-border bg-muted">
                 <div className="text-center">
-                  <QrCode className="mx-auto h-12 w-12 text-slate-400" />
-                  <h3 className="mt-4 text-lg font-medium text-slate-900">No QR Code Yet</h3>
-                  <p className="mt-2 text-sm text-slate-600">
+                  <QrCode className="mx-auto h-12 w-12 text-muted-foreground" />
+                  <h3 className="mt-4 text-lg font-medium text-foreground">No QR Code Yet</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
                     Fill in the form and click Generate QR Code to create your product QR code.
                   </p>
                 </div>
@@ -77,9 +77,9 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="mt-16 border-t border-slate-200 bg-slate-50">
+      <footer className="mt-16 border-t border-border bg-muted">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <p className="text-center text-sm text-slate-600">
+          <p className="text-center text-sm text-muted-foreground">
             All data is encoded directly in the QR code. No data is stored on any server.
           </p>
         </div>
@@ -87,3 +87,4 @@ export default function Home() {
     </div>
   );
 }
+
